@@ -1,2 +1,5 @@
 ﻿  main.cpp
+D:\Study\Coursework\Coursework 1\Game\2.5d-novel\font_choise.h(11,93): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+  (компиляция исходного файла "2.5d-novel/main.cpp")
+  
   Game.vcxproj -> D:\Study\Coursework\Coursework 1\Game\x64\Debug\Game.exe

@@ -1,26 +1,20 @@
 #include "raylib.h"
-#include "fonts_work.h"
+#include "font_choise.h"
 
 int main() {
-    InitWindow(800, 600, "Безопасный вывод текста");
-    SetTargetFPS(60);
+    InitWindow(1000, 800, "Minimal font");
 
-    if (!LoadSafeFont("C:/Windows/Fonts/arial.ttf", 36)) {
-    }
+    Font font = LoadSomeFont(255);
 
     while (!WindowShouldClose()) {
         BeginDrawing();
-        ClearBackground(RAYWHITE);
-
-        DrawSafeText("Привет, мир! Hello, world!", 100, 100, 36, DARKGREEN);
-        DrawSafeText("Размер шрифта можно менять", 100, 160, 24, DARKBLUE);
-        DrawSafeText("Ёжик и ёлка - кириллица работает", 100, 220, 30, MAROON);
-
-        DrawFPS(10, 10);
+        ClearBackground(BLACK);
+        if (font.texture.id != 0)
+            DrawTextEx(font, "Привет мир!", {360, 370}, 32, 1, Color{255, 255, 255, 255});
+        else
+            DrawText("Font error", 10, 10, 20, RED);
         EndDrawing();
     }
-
-    UnloadSafeFont();
+    UnloadFont(font);
     CloseWindow();
-    return 0;
 }
