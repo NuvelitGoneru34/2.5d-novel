@@ -1,6 +1,7 @@
 #include "player.h"
+#include "map.h"
 
-void control_walking(float angle, float speed, float* real_x, float* real_y) {
+void control_walking(float angle, float speed, bool *is_running, float *real_x, float *real_y) {
     float dx = 0, dy = 0;
 
     if (IsKeyDown(KEY_W)) {
@@ -19,6 +20,11 @@ void control_walking(float angle, float speed, float* real_x, float* real_y) {
         dx += cosf(angle + PI / 2);
         dy += sinf(angle + PI / 2);
     }
+    *is_running = false;
+    if (IsKeyDown(KEY_LEFT_SHIFT)) {
+        speed *= 2;
+        *is_running = true;
+    }
 
     float actualy_speed = sqrtf(dx * dx + dy * dy);
     if (actualy_speed > 1.0f) {
@@ -30,7 +36,7 @@ void control_walking(float angle, float speed, float* real_x, float* real_y) {
     *real_y = dy * speed;
 }
 
-void move_player(Player* player, float dx, float dy, int map[][10]) {
+void move_player(Player* player, float dx, float dy, int map[][MAP_WIDTH]) {
     float step = 2.0f * PI / player->num_points;
 
     float newX = player->x + dx;
@@ -47,7 +53,7 @@ void move_player(Player* player, float dx, float dy, int map[][10]) {
         int cellX = (int)px;
         int cellY = (int)py;
 
-        if (cellX < 0 || cellX > 9 || cellY < 0 || cellY > 9 || map[cellY][cellX] == 1) {
+        if (cellX < 0 || cellX >= MAP_WIDTH || cellY < 0 || cellY >= MAP_HEIGHT || map[cellY][cellX] == 1) {
             blocked++;
             pushX += newX - px;
             pushY += newY - py;
@@ -67,6 +73,9 @@ void move_player(Player* player, float dx, float dy, int map[][10]) {
     }
 
     float push_strength = ((float)blocked / player->num_points) * player->radius * 0.35f;
+    if (player->is_running) {
+        push_strength *= 2;
+    }
 
     player->x = newX + pushX * push_strength;
     player->y = newY + pushY * push_strength;
