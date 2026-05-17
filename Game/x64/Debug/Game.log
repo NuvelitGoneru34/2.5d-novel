@@ -1,5 +1,11 @@
 ﻿  main.cpp
-D:\Study\Coursework\Coursework 1\Game\2.5d-novel\font_choise.h(11,93): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-  (компиляция исходного файла "2.5d-novel/main.cpp")
-  
+D:\Study\Coursework\Coursework 1\Game\main.cpp(30,46): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\Study\Coursework\Coursework 1\Game\main.cpp(30,29): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\Study\Coursework\Coursework 1\Game\main.cpp(33,49): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\Study\Coursework\Coursework 1\Game\main.cpp(32,49): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\Study\Coursework\Coursework 1\Game\main.cpp(31,44): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\Study\Coursework\Coursework 1\Game\main.cpp(31,27): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+  map.cpp
+  Создание кода...
+LINK : warning LNK4098: библиотека по умолчанию "MSVCRT" конфликтует с использованием других библиотек; используйте /NODEFAULTLIB:library
   Game.vcxproj -> D:\Study\Coursework\Coursework 1\Game\x64\Debug\Game.exe
