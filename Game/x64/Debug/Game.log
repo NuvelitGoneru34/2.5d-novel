@@ -1,2 +1,9 @@
-﻿  player.cpp
+﻿  main.cpp
+D:\Study\Coursework\Coursework 1\Game\main.cpp(28,18): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+D:\Study\Coursework\Coursework 1\Game\main.cpp(53,46): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\Study\Coursework\Coursework 1\Game\main.cpp(53,29): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\Study\Coursework\Coursework 1\Game\main.cpp(56,49): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\Study\Coursework\Coursework 1\Game\main.cpp(55,49): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\Study\Coursework\Coursework 1\Game\main.cpp(54,44): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\Study\Coursework\Coursework 1\Game\main.cpp(54,27): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
   Game.vcxproj -> D:\Study\Coursework\Coursework 1\Game\x64\Debug\Game.exe
