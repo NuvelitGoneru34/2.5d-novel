@@ -1,5 +1,6 @@
 #include "player.h"
 #include "map.h"
+#include "furniture.h"
 
 void control_player(Player *player, float *real_x, float *real_y, Cell map[MAP_HEIGHT][MAP_WIDTH], DoorState doors[MAP_HEIGHT][MAP_WIDTH]) {
     float dx = 0, dy = 0;
@@ -58,7 +59,10 @@ void move_player(Player *player, float dx, float dy, Cell map[MAP_HEIGHT][MAP_WI
         int cellX = (int)px;
         int cellY = (int)py;
 
-        if (cellX < 0 || cellX >= MAP_WIDTH || cellY < 0 || cellY >= MAP_HEIGHT || IsSolid(map[cellY][cellX], &doors[cellY][cellX])) {
+        if (cellX < 0 || cellX >= MAP_WIDTH ||
+            cellY < 0 || cellY >= MAP_HEIGHT ||
+            IsSolid(map[cellY][cellX], &doors[cellY][cellX]) ||
+            (GetFAtPoint(px, py) != NULL && GetFAtPoint(px, py)->is_solid)) {
             blocked++;
             pushX += newX - px;
             pushY += newY - py;

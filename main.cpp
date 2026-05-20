@@ -1,11 +1,16 @@
 #include "raylib.h"
 #include "player.h"
 #include "map.h"
+#include "furniture.h"
 
 int main() {
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Zarmas");
     //ToggleFullscreen();
     SetTargetFPS(120);
+
+    Furniture table = { 0, 0.75, 2.0, 3.25, 2.0, 0, 0, true, false, 0 };
+    furniture_list[0] = table;
+    furniture_count = 1;
 
     Player player = { 2.5, 3.5, 0, 0.015f, 0, 2.0f, 0.25f, 32 };
     Mouse mouse = { true, 0.003f };
@@ -38,7 +43,7 @@ int main() {
                     }
                     else if (d->is_opening) {
                         float t = d->offset;
-                        color = { (unsigned char)(139 + (0 - 139) * t), (unsigned char)(69 + (255 - 69) * t), (unsigned char)(19 + (0 - 19) * t), 255 };
+                        color = { (unsigned char)(139 + 0), (unsigned char)(69 + 0), (unsigned char)(19 + 0), 255 };
                     }
                     else {
                         color = BROWN;
@@ -48,6 +53,11 @@ int main() {
                 default: color = LIGHTGRAY; break;
                 }
                 DrawRectangle(x * size, y * size, size, size, color);
+                for (int i = 0; i < furniture_count; i++) {
+                    Furniture* f = &furniture_list[i];
+                    Color color = f->is_interactable ? BLUE : DARKGREEN;
+                    DrawRectangle(f->x * size, f->y * size, f->width * size, f->height * size, color);
+                }
             }
         }
         DrawCircle(player.x * size, player.y * size, 5, RED);
