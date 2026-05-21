@@ -1,13 +1,2 @@
-﻿  main.cpp
-D:\Study\Coursework\Coursework 1\Game\main.cpp(33,18): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-D:\Study\Coursework\Coursework 1\Game\main.cpp(59,88): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-D:\Study\Coursework\Coursework 1\Game\main.cpp(59,70): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-D:\Study\Coursework\Coursework 1\Game\main.cpp(59,53): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-D:\Study\Coursework\Coursework 1\Game\main.cpp(59,40): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-D:\Study\Coursework\Coursework 1\Game\main.cpp(63,46): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-D:\Study\Coursework\Coursework 1\Game\main.cpp(63,29): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-D:\Study\Coursework\Coursework 1\Game\main.cpp(66,49): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-D:\Study\Coursework\Coursework 1\Game\main.cpp(65,49): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-D:\Study\Coursework\Coursework 1\Game\main.cpp(64,44): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-D:\Study\Coursework\Coursework 1\Game\main.cpp(64,27): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+﻿  map.cpp
   Game.vcxproj -> D:\Study\Coursework\Coursework 1\Game\x64\Debug\Game.exe

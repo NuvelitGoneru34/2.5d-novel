@@ -69,12 +69,6 @@ void move_player(Player *player, float dx, float dy, Cell map[MAP_HEIGHT][MAP_WI
         }
     }
 
-    if (blocked == 0) {
-        player->x = newX;
-        player->y = newY;
-        return;
-    }
-
     float push_avoid_vector = sqrtf(pushX * pushX + pushY * pushY);
     if (push_avoid_vector > 0.0001f) {
         pushX /= push_avoid_vector;
