@@ -23,12 +23,16 @@
     <ClInclude Include="furniture.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="raycast.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="furniture.cpp" />
+    <ClCompile Include="furniture_data.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="player.cpp" />
+    <ClCompile Include="raycast.cpp" />
+    <ClCompile Include="raycast_textures.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

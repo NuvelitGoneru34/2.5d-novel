@@ -1,8 +1,10 @@
 #ifndef MAP_H
 #define MAP_H
 
-#define SCREEN_WIDTH  1000
-#define SCREEN_HEIGHT 1010
+#include "furniture.h"
+
+#define SCREEN_WIDTH  1920
+#define SCREEN_HEIGHT 1080
 
 #define MAP_WIDTH  36
 #define MAP_HEIGHT 40
@@ -10,7 +12,8 @@
 typedef enum {
 	CELL_EMPTY = 0,
 	CELL_WALL = 1,
-	CELL_DOOR = 2
+	CELL_DOOR = 2,
+	CELL_LOCKED_DOOR = 3,
 } CellType;
 
 #define FACE_NORTH 0
@@ -29,7 +32,7 @@ typedef struct {
 typedef struct {
 	CellType type;
 	CellTexture texture;
-	float door_width;
+	Furniture* furniture;
 } Cell;
 
 typedef struct {

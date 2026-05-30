@@ -9,11 +9,13 @@ typedef struct Player {
     float x, y;
     float angle;
     float speed;
+    float base_speed;
     bool is_running;
     float acceleration;
     float radius;
     int num_points;
     float fov;
+    float actually_fov;
 } Player;
 
 typedef struct Mouse {
